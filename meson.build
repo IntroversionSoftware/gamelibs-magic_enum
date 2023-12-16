@@ -27,4 +27,6 @@ pkg.generate(
   extra_cflags: magic_enum_args,
 )
 
+meson.override_dependency('magic_enum', magic_enum_dep)
+
 subdir('test')
