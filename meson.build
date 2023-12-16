@@ -4,7 +4,7 @@ project(
     version: '0.9.5',
 )
 
-magic_enum_include = include_directories('include/magic_enum')
+magic_enum_include = include_directories('include')
 
 magic_enum_args = []
 
@@ -16,6 +16,8 @@ magic_enum_dep = declare_dependency(
     include_directories: magic_enum_include,
     compile_args: magic_enum_args,
 )
+
+meson.override_dependency('magic_enum', magic_enum_dep)
 
 if get_option('test')
     subdir('test')
