@@ -1510,37 +1510,37 @@ inline constexpr auto as_common = AsFlags ? detail::enum_subtype::common : detai
 namespace bitwise_operators {
 
 template <typename E, detail::enable_if_t<E, int> = 0>
-constexpr E operator~(E rhs) noexcept {
+XOM_FORCE_INLINE_DBG constexpr E operator~(E rhs) noexcept {
   return static_cast<E>(~static_cast<underlying_type_t<E>>(rhs));
 }
 
 template <typename E, detail::enable_if_t<E, int> = 0>
-constexpr E operator|(E lhs, E rhs) noexcept {
+XOM_FORCE_INLINE_DBG constexpr E operator|(E lhs, E rhs) noexcept {
   return static_cast<E>(static_cast<underlying_type_t<E>>(lhs) | static_cast<underlying_type_t<E>>(rhs));
 }
 
 template <typename E, detail::enable_if_t<E, int> = 0>
-constexpr E operator&(E lhs, E rhs) noexcept {
+XOM_FORCE_INLINE_DBG constexpr E operator&(E lhs, E rhs) noexcept {
   return static_cast<E>(static_cast<underlying_type_t<E>>(lhs) & static_cast<underlying_type_t<E>>(rhs));
 }
 
 template <typename E, detail::enable_if_t<E, int> = 0>
-constexpr E operator^(E lhs, E rhs) noexcept {
+XOM_FORCE_INLINE_DBG constexpr E operator^(E lhs, E rhs) noexcept {
   return static_cast<E>(static_cast<underlying_type_t<E>>(lhs) ^ static_cast<underlying_type_t<E>>(rhs));
 }
 
 template <typename E, detail::enable_if_t<E, int> = 0>
-constexpr E& operator|=(E& lhs, E rhs) noexcept {
+XOM_FORCE_INLINE_DBG constexpr E& operator|=(E& lhs, E rhs) noexcept {
   return lhs = (lhs | rhs);
 }
 
 template <typename E, detail::enable_if_t<E, int> = 0>
-constexpr E& operator&=(E& lhs, E rhs) noexcept {
+XOM_FORCE_INLINE_DBG constexpr E& operator&=(E& lhs, E rhs) noexcept {
   return lhs = (lhs & rhs);
 }
 
 template <typename E, detail::enable_if_t<E, int> = 0>
-constexpr E& operator^=(E& lhs, E rhs) noexcept {
+XOM_FORCE_INLINE_DBG constexpr E& operator^=(E& lhs, E rhs) noexcept {
   return lhs = (lhs ^ rhs);
 }
 
